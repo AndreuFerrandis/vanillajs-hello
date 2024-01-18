@@ -4,30 +4,26 @@ import "./style.css";
 
 import "./assets/img/rigo-baby.jpg";
 import "./assets/img/4geeks.ico";
-
 window.onload = function() {
-  //write your code here
-  console.log("Hello Rigo from the console!");
+  let who = ["El perro", "Mi abuela", "Su tortuga", "Mi pájaro"];
+  let action = ["se comió", "orinó en", "aplastó", "rompió"];
+  let what = ["mi tarea", "las llaves", "el auto"];
+  let when = [
+    "antes de la clase",
+    "justo a tiempo",
+    "cuando terminé",
+    "durante mi almuerzo",
+    "mientras rezaba"
+  ];
+
+  function generarExcusa() {
+    let excusa = `${who[Math.floor(Math.random() * who.length)]} ${
+      action[Math.floor(Math.random() * action.length)]
+    } ${what[Math.floor(Math.random() * what.length)]} ${
+      when[Math.floor(Math.random() * when.length)]
+    }`;
+    return excusa;
+  }
+
+  document.getElementById("excuse").innerHTML = generarExcusa();
 };
-
-const excusas = [
-  "Se me olvidó",
-  "No recibí el mensaje",
-  "Tuve problemas técnicos",
-  "Tenía una reunión urgente",
-  "Mi perro se comió la tarea",
-  "Hubo un corte de electricidad",
-  "Mi despertador no sonó",
-  "Estaba en una llamada importante",
-  "Se me acabó la batería del teléfono",
-  "Estaba atrapado en el tráfico"
-];
-
-function generarExcusa() {
-  const indice = Math.floor(Math.random() * excusas.length);
-
-  const excusaElemento = document.getElementById("excusa");
-  excusaElemento.textContent = "Esta es mi excusa favorita: " + excusas[indice];
-}
-
-generarExcusa();
